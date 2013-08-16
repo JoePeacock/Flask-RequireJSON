@@ -1,7 +1,7 @@
 from flask import request, jsonify
 from functools import wraps
 
-def requires_json(required=[], ignore=[]):
+def require_json(required=[], ignore=[]):
     def decorator(f):
         @wraps(f)
         def decorated_function(*args, **kwargs):

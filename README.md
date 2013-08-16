@@ -9,7 +9,7 @@ Flask-RequireJSON takes care of checking the ```Content-Type``` headers, checks 
 Simply use the RequiresJSON.py file, and include it in your app, or copy the code into your uitls or helpers file.
 
 ``` python
-from RequiresJSON import requires_json
+from RequireJSON import require_json
 ```
 
 #### Usage
@@ -37,7 +37,7 @@ ex:
 
 ``` python
 @app.route("/user/<int:uid>", methods=['GET', 'PATCH', 'DELETE'])
-@requires_json(required=['api_key'], ignore=['DELETE'])
+@require_json(required=['api_key'], ignore=['DELETE'])
 def editUser(uid):
     # Your Code Here
     pass

@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 @app.route("/login", methods=['POST'])
-@requires_json(required=['email', 'password'])
+@require_json(required=['email', 'password'])
 def login():
 
     # Safely get required values from json with errors
@@ -18,7 +18,7 @@ def login():
         return jsonify({"message": "Username or password was incorrect" })
 
 @app.route("/user/<int:uid>", methods=['GET', 'PATCH', 'DELETE' ])
-@requires_json(required=['api_key'], ignore=['DELETE'])
+@require_json(required=['api_key'], ignore=['DELETE'])
 def editUser(uid):
 
     # Ignore methods which may not require json being sent.
