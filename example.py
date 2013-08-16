@@ -4,7 +4,6 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 app.debug = True
 
-
 @app.route("/login", methods=['POST'])
 @requires_json(required=['email', 'password'])
 def login():
@@ -18,7 +17,6 @@ def login():
         return jsonify({"message": "Woohoo, User " + email + " successfully logged in"})
     else:
         return jsonify({"message": "Username or password was incorrect" })
-
 
 @app.route("/user/<int:uid>", methods=['GET', 'PATCH', 'DELETE' ])
 @requires_json(required=['api_key'], ignore=['DELETE'])
@@ -36,7 +34,6 @@ def editUser(uid):
         api_key = request.json['api_key']
         # Update user
         return jsonify({ "message": "User updated" })
- 
 
 if __name__ == "__main__":
     app.run()
