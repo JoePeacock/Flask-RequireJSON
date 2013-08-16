@@ -33,4 +33,13 @@ ex:
 @require_json(required=['email', 'password']) 
 ```
 
+#### Example Method
+
+``` python
+@app.route("/user/<int:uid>", methods=['GET', 'PATCH', 'DELETE'])
+@requires_json(required=['api_key'], ignore=['DELETE'])
+def editUser(uid):
+    # Your Code Here
+    pass
+```
 
