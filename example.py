@@ -2,7 +2,6 @@ from RequireJSON import requires_json
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-app.debug = True
 
 @app.route("/login", methods=['POST'])
 @requires_json(required=['email', 'password'])
