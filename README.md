@@ -17,7 +17,7 @@ from RequireJSON import require_json
 There are two parameters for Flask-RequireJSON which are ``` ignore ``` and ``` required ```.
 
 ##### ignore:
-A list of methods to ignore check json on, for use on routes with multiple methods. GET requests are always ignored. 
+A list of methods to ignore checking, for use on routes with multiple methods. GET requests are always ignored. 
 
 ex: 
 ``` python 
