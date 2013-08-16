@@ -1,7 +1,8 @@
-from Flask-RequireJSON import requires_json
-from flask import Flask, request
+from RequireJSON import requires_json
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+app.debug = True
 
 
 @app.route("/login", methods=['POST'])
@@ -26,14 +27,13 @@ def editUser(uid):
     # Ignore methods which may not require json being sent.
     # GET is ignored by default
 
-    api_key = request.json['api_key']
-
     if request.method == 'GET':
-        return uid
+        return "User id: %d" % uid
     if request.method == 'DELETE':
         # Delte user from DB
         return jsonify({"message": "User succesfully deleted"})
     if request.method == 'PATCH':
+        api_key = request.json['api_key']
         # Update user
         return jsonify({ "message": "User updated" })
  
