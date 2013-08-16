@@ -2,7 +2,7 @@
 
 ### Flask decorator for checking JSON requests in a RESTful API
 
-Flask-RequireJSON takes care of checking the ```Content-Type``` headers, checks the validity of the JSON, and makes sure your required values are set on the request methods you specify
+Flask-RequireJSON takes care of checking the ```Content-Type``` headers, checks the validity of the JSON, and makes sure your required values are set, on the request methods you specify.
 
 #### Setup
 
